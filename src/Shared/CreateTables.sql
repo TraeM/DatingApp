@@ -1,0 +1,124 @@
+﻿CREATE TABLE [app].[Gender]
+(
+  [Id]   TINYINT             NOT NULL PRIMARY KEY,
+  [Name] NVARCHAR(20) UNIQUE NOT NULL,
+);
+go
+CREATE TABLE [app].[Interest] (
+  [Id]   INT           NOT NULL PRIMARY KEY IDENTITY,
+  [Name] NVARCHAR(200) NOT NULL UNIQUE,
+
+  --INDEX IDX_INTEREST_NAME CLUSTERED (Name)
+);
+go
+CREATE TABLE [app].[Person] (
+  [Id]        INT           NOT NULL PRIMARY KEY IDENTITY,
+  [FirstName] NVARCHAR(100) NOT NULL,
+  [LastName]  NVARCHAR(100) NOT NULL,
+  [Age]       SMALLINT      NOT NULL,
+  [GenderId]  TINYINT       NOT NULL FOREIGN KEY REFERENCES [app].[Gender] (Id),
+
+  --INDEX IDX_PERSON_GENDERID CLUSTERED (GenderId)
+);
+go
+CREATE TABLE [app].[Profile] (
+  [Id]        INT NOT NULL PRIMARY KEY IDENTITY,
+  [Bio]       NVARCHAR(500) SPARSE,
+  [IsDeleted] BIT SPARSE,
+  [PersonId]  INT NOT NULL UNIQUE FOREIGN KEY REFERENCES [app].[Person] (Id),
+
+  --INDEX IDX_PROFILE_PERSONID (PersonId)
+);
+go
+CREATE TABLE [app].[User] (
+  [Id]        INT NOT NULL PRIMARY KEY IDENTITY,
+  [ProfileId] INT NOT NULL UNIQUE FOREIGN KEY REFERENCES [app].[Profile] (Id),
+
+  --INDEX IDX_USER_PROFILEID NONCLUSTERED (ProfileId)
+);
+go
+CREATE TABLE [app].[Device] (
+  [Id]       INT       NOT NULL PRIMARY KEY IDENTITY,
+  [UserId]   INT       NOT NULL FOREIGN KEY REFERENCES [app].[User] (Id),
+  [Location] GEOGRAPHY NOT NULL,
+
+  --INDEX IDX_DEVICE_USERID NONCLUSTERED (UserId),
+);
+go
+CREATE TABLE [app].[InterestRating] (
+  Rating     SMALLINT NOT NULL DEFAULT 0,
+  UserId     INT      NOT NULL FOREIGN KEY REFERENCES [app].[User] (Id),
+  InterestId INT      NOT NULL FOREIGN KEY REFERENCES [app].[Interest] (Id),
+
+  --CONSTRAINT CST_USERID_INTRESTID UNIQUE CLUSTERED (UserId ASC, InterestId),
+  --INDEX IDX_INTRESTRATING_USEREID (UserId),
+  --INDEX IDX_INTRESTRATING_INTERESTID (InterestId),
+);
+go
+CREATE TABLE [app].[Session] (
+  [Id]       INT NOT NULL PRIMARY KEY IDENTITY,
+  [UserId]   INT NOT NULL FOREIGN KEY REFERENCES [app].[User] (Id),
+  [DeviceId] INT NOT NULL FOREIGN KEY REFERENCES app.Device (Id),
+
+  --CONSTRAINT CST_USER_DEVICE UNIQUE (UserId ASC, DeviceId),
+);
+go
+CREATE TABLE [app].[Authentication] (
+  [Id]     INT       NOT NULL PRIMARY KEY IDENTITY,
+  [UserId] INT       NOT NULL FOREIGN KEY REFERENCES [app].[User] (Id),
+  [Hash]   VARBINARY NOT NULL,
+
+  --CONSTRAINT CST_AUTHENTICATION_USERID UNIQUE CLUSTERED (UserId ASC),
+  --INDEX IDX_AUTHENTICATION_USERID NONCLUSTERED (UserId)
+);
+go
+CREATE TABLE [app].[AuthToken] (
+  [AuthenticationId] INT      NOT NULL FOREIGN KEY REFERENCES app.Authentication (Id),
+  [Created]          DATETIME NOT NULL,
+  [Expires]          DATETIME,
+  [IsExpired]        bit,
+
+  --INDEX IDX_AUTHTOKEN_EXPIRES_USERID CLUSTERED (Expires DESC, AuthenticationId),
+  --INDEX IDX_AUTHTOKEN_AUTHENTICATIONID NONCLUSTERED (AuthenticationId)
+);
+go
+CREATE TABLE [app].[Match] (
+  [Id]            INT NOT NULL PRIMARY KEY IDENTITY,
+  [UserId]        INT NOT NULL FOREIGN KEY REFERENCES app.[User] (Id),
+  [MatchedUserId] INT NOT NULL FOREIGN KEY REFERENCES app.[User] (Id),
+  [StartDate]     DATETIME NOT NULL,
+  [EndDate]       DATETIME
+
+ -- CONSTRAINT CST_USERID_MATCHEDUSERID UNIQUE (UserId ASC, MatchedUserId),
+  --INDEX IDX_MATCH_USERID NONCLUSTERED (UserId),
+  --INDEX IDX_MATCH_MATCHEDUSERID NONCLUSTERED (MatchedUserId)
+);
+go
+CREATE TABLE [app].[Message] (
+  [Id]           INT      NOT NULL PRIMARY KEY IDENTITY,
+  [MatchId]      INT      NOT NULL FOREIGN KEY REFERENCES app.[Match] (Id),
+  [UserId]       INT      NOT NULL FOREIGN KEY REFERENCES app.[User] (Id),
+  [SentDateTime] DATETIME NOT NULL,
+  [Content]      NVARCHAR(MAX) SPARSE,
+  [Liked]        BIT      NOT NULL,
+
+  --INDEX IDX_MESSAGE_MATCHID NONCLUSTERED (MatchId)
+);
+go
+CREATE TABLE [app].[Decision] (
+  [UserId]      INT NOT NULL FOREIGN KEY REFERENCES app.[User] (Id),
+  [LikedUserId] INT NOT NULL FOREIGN KEY REFERENCES app.[User] (Id),
+  [Liked] BIT NOT NULL,
+
+ --INDEX IDX_DECISION_LikedUserId NONCLUSTERED (LikedUserId)
+);
+go
+CREATE TABLE [app].[ProfileImage] (
+  [Id]        INT           NOT NULL PRIMARY KEY IDENTITY,
+  [Url]       NVARCHAR(500) NOT NULL,
+  [Priority]  TINYINT       NOT NULL,
+  [ProfileId] INT           NOT NULL FOREIGN KEY REFERENCES app.Profile (Id),
+
+  --INDEX IDX_PROFILEIMAGE_PROFILID NONCLUSTERED (ProfileId)
+);
+go

@@ -39,7 +39,7 @@
       <Project>{5CAA807C-25B4-4F42-BCC8-4F3386B1E36E}</Project>
       <Name>DatingApp.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DatingApp.Models\DatingApp.Data.csproj">
+    <ProjectReference Include="..\DatingApp.Data\DatingApp.Data.csproj">
       <Project>{722A47B1-3716-4E41-A9AC-75068A9EA8F3}</Project>
       <Name>DatingApp.Data</Name>
     </ProjectReference>

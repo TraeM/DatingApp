@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\DatingApp.Models\DatingApp.Data.csproj">
+    <ProjectReference Include="..\DatingApp.Data\DatingApp.Data.csproj">
       <Project>{722a47b1-3716-4e41-a9ac-75068a9ea8f3}</Project>
       <Name>DatingApp.Data</Name>
     </ProjectReference>
