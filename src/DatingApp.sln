@@ -3,23 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Data", "DatingApp.Data\DatingApp.Data.csproj", "{722A47B1-3716-4E41-A9AC-75068A9EA8F3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Services", "DatingApp.Services\DatingApp.Services.csproj", "{C3FDE17C-8B52-470A-84E4-8564DC80B13A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Core", "DatingApp.Core\DatingApp.Core.csproj", "{5CAA807C-25B4-4F42-BCC8-4F3386B1E36E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Api", "DatingApp.Api\DatingApp.Api.csproj", "{EBF720C1-44EC-4AC0-A0F9-4FF5EF956A97}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Repository", "DatingApp.Repository\DatingApp.Repository.csproj", "{65618338-99ED-4BC8-A44A-CFBBE23DF12D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.DevelopmentUtilityConsole", "DatingApp.FileUtility\DatingApp.DevelopmentUtilityConsole.csproj", "{C0FE2C71-5E4D-4B99-A694-2E98FA43225E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.DevelopmentUtilityConsole", "DatingApp.DevelopmentUtilityConsole\DatingApp.DevelopmentUtilityConsole.csproj", "{C0FE2C71-5E4D-4B99-A694-2E98FA43225E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{543623B1-45EA-45DF-962C-E5996D47F4A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A4D21754-B3DE-43E7-8237-33881F34E46C}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{07F05AF4-079A-44BB-A4E1-E39BD6702274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Api", "DatingApp.Api\DatingApp.Api.csproj", "{18572545-CB16-4B59-B325-167BF0CC7B40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Core", "DatingApp.Core\DatingApp.Core.csproj", "{A1025292-4CCA-48F2-9CDF-62FF618D5814}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Data", "DatingApp.Data\DatingApp.Data.csproj", "{CC2CE6B3-38D4-41B1-A0C6-12BBF08E5807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Repository", "DatingApp.Repository\DatingApp.Repository.csproj", "{922FB528-D3F6-4E46-BF75-6E3B1D39EECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Services", "DatingApp.Services\DatingApp.Services.csproj", "{02AF5BB3-E685-43D5-B604-2FD8DD2F4667}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -30,30 +30,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{722A47B1-3716-4E41-A9AC-75068A9EA8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{722A47B1-3716-4E41-A9AC-75068A9EA8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{722A47B1-3716-4E41-A9AC-75068A9EA8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{722A47B1-3716-4E41-A9AC-75068A9EA8F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3FDE17C-8B52-470A-84E4-8564DC80B13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3FDE17C-8B52-470A-84E4-8564DC80B13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3FDE17C-8B52-470A-84E4-8564DC80B13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3FDE17C-8B52-470A-84E4-8564DC80B13A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5CAA807C-25B4-4F42-BCC8-4F3386B1E36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CAA807C-25B4-4F42-BCC8-4F3386B1E36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CAA807C-25B4-4F42-BCC8-4F3386B1E36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CAA807C-25B4-4F42-BCC8-4F3386B1E36E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBF720C1-44EC-4AC0-A0F9-4FF5EF956A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBF720C1-44EC-4AC0-A0F9-4FF5EF956A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBF720C1-44EC-4AC0-A0F9-4FF5EF956A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBF720C1-44EC-4AC0-A0F9-4FF5EF956A97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65618338-99ED-4BC8-A44A-CFBBE23DF12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65618338-99ED-4BC8-A44A-CFBBE23DF12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65618338-99ED-4BC8-A44A-CFBBE23DF12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65618338-99ED-4BC8-A44A-CFBBE23DF12D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C0FE2C71-5E4D-4B99-A694-2E98FA43225E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C0FE2C71-5E4D-4B99-A694-2E98FA43225E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0FE2C71-5E4D-4B99-A694-2E98FA43225E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0FE2C71-5E4D-4B99-A694-2E98FA43225E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18572545-CB16-4B59-B325-167BF0CC7B40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18572545-CB16-4B59-B325-167BF0CC7B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18572545-CB16-4B59-B325-167BF0CC7B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18572545-CB16-4B59-B325-167BF0CC7B40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1025292-4CCA-48F2-9CDF-62FF618D5814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1025292-4CCA-48F2-9CDF-62FF618D5814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1025292-4CCA-48F2-9CDF-62FF618D5814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1025292-4CCA-48F2-9CDF-62FF618D5814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2CE6B3-38D4-41B1-A0C6-12BBF08E5807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2CE6B3-38D4-41B1-A0C6-12BBF08E5807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2CE6B3-38D4-41B1-A0C6-12BBF08E5807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2CE6B3-38D4-41B1-A0C6-12BBF08E5807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922FB528-D3F6-4E46-BF75-6E3B1D39EECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922FB528-D3F6-4E46-BF75-6E3B1D39EECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922FB528-D3F6-4E46-BF75-6E3B1D39EECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922FB528-D3F6-4E46-BF75-6E3B1D39EECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AF5BB3-E685-43D5-B604-2FD8DD2F4667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AF5BB3-E685-43D5-B604-2FD8DD2F4667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AF5BB3-E685-43D5-B604-2FD8DD2F4667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AF5BB3-E685-43D5-B604-2FD8DD2F4667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

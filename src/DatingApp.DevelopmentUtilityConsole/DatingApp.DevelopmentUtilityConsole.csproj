@@ -49,16 +49,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DatingApp.Core\DatingApp.Core.csproj">
-      <Project>{5caa807c-25b4-4f42-bcc8-4f3386b1e36e}</Project>
-      <Name>DatingApp.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DatingApp.Data\DatingApp.Data.csproj">
-      <Project>{722a47b1-3716-4e41-a9ac-75068a9ea8f3}</Project>
-      <Name>DatingApp.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
